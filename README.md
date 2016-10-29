@@ -1,4 +1,12 @@
 # sight-words
-An elementary **teacher resources app** for early readers. This app allows the user to generate and save lists of sightwords to build customized printable flashcard decks, and in app sight-word quizing game. 
 
-Built with the [Datamuse API](http://www.datamuse.com/api/.).   
+This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
+version 0.15.1.
+
+## Build & development
+
+Run `grunt` for building and `grunt serve` for preview.
+
+## Testing
+
+Running `grunt test` will run the unit tests with karma.
