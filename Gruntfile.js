@@ -41,7 +41,7 @@ module.exports = function (grunt) {
       },
       pages: {
         options: {
-          remote: 'git@github.com:kiranw06/sight-words.git',
+          remote: 'git@github.com:kiranw06/sight-wordsk.git',
           branch: 'gh-pages'
         }
       }
