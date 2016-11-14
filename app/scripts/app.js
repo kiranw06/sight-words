@@ -16,9 +16,10 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
+    'auth0',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, authProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -48,4 +49,12 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+    authProvider.init({
+      domain: 'kiranw.auth0.com',
+      clientID: 'JULTb6aQTqHiO8c4L6lzCIl0mHza4DCY',
+      loginUrl: 'views/login'
+    });
+  })
+  .run(function(auth) {
+    auth.hookEvents();
   });
