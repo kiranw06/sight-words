@@ -1,1 +1,26 @@
-<p>This is the projects view.</p>
+<div ng-app class="jumbotron" ng-controller="MainCtrl">
+  <h1>Suggestions for: {{searchTerm}}</h1>
+  <p class="lead">
+    <div ng-init="s=''">
+        <p>
+          <label for="s">Search:
+            <input type="text" name="searchTerm" ng-model="searchTerm">
+          </label>
+        </p>
+        <p>
+          <button class="btn btn-lg btn-primary" ng-click="refreshsearch(searchTerm)"><span class="glyphicon glyphicon-search"></span></button>
+        </p>
+      <div class="results">
+        <dl>
+          <h2>Results</h2>
+          {{suggestedWords|json}}
+          <dt>
+            <dd>
+              <button type="button" class="btn btn-outline-primary">{{search.word}}</button>
+            </dd> 
+          </dt>
+        <dl>
+      </div>
+    </div>
+  </p>
+</div>

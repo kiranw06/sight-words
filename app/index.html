@@ -20,6 +20,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div>
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
@@ -38,12 +39,12 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/login">My Projects</a></li>
+              <li><a ng-href="#/projects">My Projects</a></li>
               <li><a ng-href="#/starter">Starter Decks</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a ng-href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
           </div>
         </div>
@@ -94,6 +95,9 @@
         <script src="scripts/controllers/projects.js"></script>
         <script src="scripts/controllers/starter.js"></script>
         <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/services/search.js"></script>
+        <!-- TODO <script src="scripts/services/authservice.js"></script> -->
         <!-- endbuild -->
+  </div>
 </body>
 </html>
