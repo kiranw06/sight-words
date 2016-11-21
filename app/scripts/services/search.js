@@ -14,7 +14,7 @@ angular.module('sightWordsApp')
         method:'GET',
         params:{
           s: '',
-          max: '20'
+          max: '12'
         },
           isArray:true
       }

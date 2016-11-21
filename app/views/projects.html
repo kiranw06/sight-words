@@ -1,26 +1,29 @@
-<div ng-app class="jumbotron" ng-controller="MainCtrl">
-  <h1>Suggestions for: {{searchTerm}}</h1>
-  <p class="lead">
-    <div ng-init="s=''">
-        <p>
-          <label for="s">Search:
-            <input type="text" name="searchTerm" ng-model="searchTerm">
-          </label>
-        </p>
-        <p>
-          <button class="btn btn-lg btn-primary" ng-click="refreshsearch(searchTerm)"><span class="glyphicon glyphicon-search"></span></button>
-        </p>
-      <div class="results">
-        <dl>
-          <h2>Results</h2>
-          {{suggestedWords|json}}
-          <dt>
-            <dd>
-              <button type="button" class="btn btn-outline-primary">{{search.word}}</button>
-            </dd> 
-          </dt>
-        <dl>
-      </div>
+<div ng-app="sight-words" ng-controller="ProjectsCtrl" class="container">
+  <div ng-init="s=''">
+    <div class="row jumbotron">
+    <div class="col-xs-12">
+      <h1>Find Sight Words</h1>
+      <p>
+        <label for="s">Search:
+          <input type="text" name="searchTerm" ng-model="searchTerm">
+        </label>
+        <button class="btn btn-lg btn-primary" ng-click="refreshsearch(searchTerm)">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+      </p>
     </div>
-  </p>
+    </div>
+
+    <div class="row results">
+      <h2>Suggestions for: {{searchTerm}}</h2>
+      <ul class="result-word list-inline" ng-repeat="word in suggestedWords">
+        <!-- word.word used to define search results array nameed "word" & object named "word" -->
+        <div class="col-xs-6 col-md-4">
+          <li class="bg-primary lead text-center">{{word.word}}</li>
+        </div>
+      </ul>
+    </div>
+  </div>
 </div>
+
+ <!-- Check JSON {{suggestedWords|json}} -->

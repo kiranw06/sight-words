@@ -13,5 +13,5 @@ angular.module('sightWordsApp')
     	$scope.suggestedWords = search.query({
     		s: term 
     	});
-    }
+    };
   });
