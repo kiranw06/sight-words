@@ -1,0 +1,67 @@
+<div class="container" ng-model="PrintCtrl">
+
+
+<!-- Invisible in Print Mode -->
+	<div class="row bg-info">
+		<div class="col-xs-12">
+			<h1>Preview</h1>
+			{{listName}}
+			<hr>
+			<p class="lead">
+    			Looking Good? 
+    		</p>
+		</div>
+    	<div class="col-xs-12 col-sm-5 bg-warning">
+    		<h2>Meh...</h2>
+    		<p>Go back and edit.</p>
+    		<p>
+    			<a class="btn btn-lg btn-warning" type="button" class="btn btn-primary btn-lg pull-right" ng-href="#/projects">
+        		  <span class="glyphicon glyphicon-erase"></span>
+        		</a>
+    		</p>
+    	</div>
+    	<div class="col-xs-12 col-sm-7 bg-success">
+    		<h2>Yep!</h2>
+    		<p>Happy Quizzing</p>
+    		<p>
+    			<a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg pull-right" ng-href="#/newlist">
+        		  <span class="glyphicon glyphicon-print"></span>
+        		</a>
+        		<a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg pull-right" ng-href="#/newlist">
+        		  <span class="glyphicon glyphicon-download-alt"></span>
+        		</a>
+    		</p>
+    	</div>
+	</div>
+
+
+<!-- Visible in Print Mode -->
+
+
+	<div class="container pritinable">
+		<div class="row">
+
+			<div class="col-xs-12 text-center">
+				<h1>List Name {{listName}}</h1>
+				<p class="text-muted">
+					<b>Made with Sight Words</b><br>
+					kiranw.com/sight-words
+				</p>
+				<hr>
+				<ul class="printable-card-list list-inline">
+					<div class="col-xs-6 printable-card bg-primary">
+						<li><h1>{{selectedWord}}</h1></li>
+					</div>
+				</ul>
+			</div>
+
+		</div>
+		
+
+
+	</div>
+
+
+</div>
+  
+

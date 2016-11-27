@@ -1,29 +1,31 @@
-<div ng-app="sight-words" ng-controller="ProjectsCtrl" class="container">
-  <div ng-init="s=''">
-    <div class="row jumbotron">
-    <div class="col-xs-12">
-      <h1>Find Sight Words</h1>
+<div class="container" ng-model="ProjectsCtrl">
+  <div class="row">
+    <h1>My Projects</h1>
+    <hr>
+
+    <div class="col-xs-12 col-sm-6 col-md-4 panel panel-primary">
+      <h2 class="text-center">New Project</h2>
       <p>
-        <label for="s">Search:
-          <input type="text" name="searchTerm" ng-model="searchTerm">
-        </label>
-        <button class="btn btn-lg btn-primary" ng-click="refreshsearch(searchTerm)">
-          <span class="glyphicon glyphicon-search"></span>
-        </button>
+        <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/newlist">
+          <span class="glyphicon glyphicon-plus"></span>
+        </a>
       </p>
     </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4 panel panel-info">
+      <h2 class="text-center">List Name: {{listName}}</h2>
+      <p>
+        <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/print">
+          Preview
+        </a>
+        <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/print">
+          <span class="glyphicon glyphicon-print"></span>
+        </a>
+        <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg">
+          <span class="glyphicon glyphicon-download-alt"></span>
+        </a>
+      </p>
     </div>
 
-    <div class="row results">
-      <h2>Suggestions for: {{searchTerm}}</h2>
-      <ul class="result-word list-inline" ng-repeat="word in suggestedWords">
-        <!-- word.word used to define search results array nameed "word" & object named "word" -->
-        <div class="col-xs-6 col-md-4">
-          <li class="bg-primary lead text-center">{{word.word}}</li>
-        </div>
-      </ul>
-    </div>
   </div>
 </div>
-
- <!-- Check JSON {{suggestedWords|json}} -->

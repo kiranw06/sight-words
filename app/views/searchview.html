@@ -1,0 +1,60 @@
+<div ng-app="sight-words" ng-controller="SearchviewCtrl" class="container">
+  <div ng-init="s=''">
+    
+
+    <div class="row jumbotron">
+      <div class="col-xs-12">
+        <h1>Find Sight Words</h1>
+        <p>
+          <label for="s">Search:
+            <input type="text" name="searchTerm" ng-model="searchTerm">
+          </label>
+          <button class="btn btn-lg btn-primary" ng-click="refreshsearch(searchTerm)">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </p>
+      </div>
+    </div>
+
+
+    <div id="selected-words" class="row">
+      <div class="col-xs-12">
+        <h3>Selected Words: {{listName}}</h3>
+        <ul class="selected-words-list list-inline">
+          <li>{{selectedWord}}</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="row results">
+      <div class="col-xs-12">
+        <h2>Suggestions for: {{searchTerm}}</h2>
+        
+        <ul class="result-word list-inline" ng-repeat="word in suggestedWords">
+          <!-- word.word used to define search results array nameed "word" & object named "word" -->
+          
+          <div class="col-xs-6 col-md-4">
+            <li class="bg-primary lead text-center">
+              <p>{{word.word}}</p>
+              <p>
+                <a class="btn btn-success" type="button" class="btn btn-primary btn-lg">
+                  <span class="glyphicon glyphicon-ok"></span>
+                </a>
+                <a class="btn btn-danger" type="button" class="btn btn-primary btn-lg">
+                  <span class="glyphicon glyphicon-remove"></span>
+                </a>
+              </p>
+            </li>
+          </div>
+        
+        </ul>
+
+      </div>
+    </div>
+    
+
+  </div>
+</div>
+
+ <!-- Check JSON {{suggestedWords|json}} -->

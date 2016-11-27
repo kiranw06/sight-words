@@ -15,7 +15,7 @@ angular
     'ngCookies',
     'ngResource',
     'ngRoute',
-    'ngSanitize', 
+    'ngSanitize',
     'ngTouch'
   ])
   .config(function ($routeProvider) {
@@ -44,6 +44,21 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
         controllerAs: 'login'
+      })
+      .when('/searchview', {
+        templateUrl: 'views/searchview.html',
+        controller: 'SearchviewCtrl',
+        controllerAs: 'searchview'
+      })
+      .when('/newlist', {
+        templateUrl: 'views/newlist.html',
+        controller: 'NewlistCtrl',
+        controllerAs: 'newlist'
+      })
+      .when('/print', {
+        templateUrl: 'views/print.html',
+        controller: 'PrintCtrl',
+        controllerAs: 'print'
       })
       .otherwise({
         redirectTo: '/'

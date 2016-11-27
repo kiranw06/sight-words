@@ -9,15 +9,14 @@
  */
 angular.module('sightWordsApp')
   .factory('wordsendpoint', function () {
-    // Service logic
-    // ...
-
-    var meaningOfLife = 42;
-
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
+    //  return $resource('https://api.datamuse.com/words?sp=???&rel_rhy=at', {}, {
+    //   query: {
+    //     method:'GET',
+    //     params:{
+    //       s: '',
+    //       max: '12'
+    //     },
+    //       isArray:true
+    //   }
+    // });
   });
