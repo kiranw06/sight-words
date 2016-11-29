@@ -1,6 +1,18 @@
 <div ng-app="sight-words" ng-controller="SearchviewCtrl" class="container">
   <div ng-init="s=''">
     
+  <div id="listData">
+
+    
+    <div class="jumbotron-fluid" ng-controller="ProjectsCtrl">
+      <h1>New Project</h1>
+      <hr>
+        <p>Save project as: {{listName}}</p>
+        <p>
+            Name: <input type="text" name="listName" id="list-name" ng-model="listName"></input> 
+            <a type="button" class="btn btn-primary" ng-click="saveList(listName)">Save</a> 
+        </p>
+    </div>
 
     <div class="row jumbotron">
       <div class="col-xs-12">
@@ -27,13 +39,16 @@
     </div>
 
 
+  </div> 
+   
+
+
     <div class="row results">
       <div class="col-xs-12">
         <h2>Suggestions for: {{searchTerm}}</h2>
         
         <ul class="result-word list-inline" ng-repeat="word in suggestedWords">
-          <!-- word.word used to define search results array nameed "word" & object named "word" -->
-          
+          <!-- word.word used to define search results array named "word" & object named "word" -->
           <div class="col-xs-6 col-md-4">
             <li class="bg-primary lead text-center">
               <p>{{word.word}}</p>
@@ -53,8 +68,8 @@
       </div>
     </div>
     
+    {{suggestedWords|json}}
 
   </div>
 </div>
 
- <!-- Check JSON {{suggestedWords|json}} -->
