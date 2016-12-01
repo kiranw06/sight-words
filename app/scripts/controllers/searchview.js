@@ -70,6 +70,13 @@ angular.module('sightWordsApp')
     	$scope.selectedWords.push(word);
     };
 
+    $scope.deselectWord = function(word){
+      // finds clicked word
+      $scope.word = word;
+      // finds position of word in array
+      $scope.wordIndex = $scope.selectedWords.indexOf($scope.word);
 
+      $scope.selectedWords.splice($scope.wordIndex, 1);
+    };
 
 });

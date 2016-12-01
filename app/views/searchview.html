@@ -32,8 +32,15 @@
     <div id="selected-words" class="row" ng-controller="ProjectsCtrl">
       <div class="col-xs-12">
         <h3>Selected Words:</h3>
-        <ul class="selected-words-list list-inline" ng-model="selectedWords">
-          <li ng-repeat="item in selectedWords">{{selectedWords}}</li>
+        <ul class="selected-words-list list-inline">
+          <li ng-repeat="word in selectedWords">
+            <p>{{word}}</p>
+            <p>
+              <a class="btn btn-danger" type="button" class="btn btn-primary btn-lg" ng-click="deselectWord(word.word)">
+                    <span class="glyphicon glyphicon-remove"></span>
+              </a>
+            </p>
+          </li>
         </ul>
       </div>
     </div>
@@ -58,9 +65,9 @@
                   <span class="glyphicon glyphicon-ok"></span> 
                 </a>
                 <!-- add ng-hide -->
-                <a class="btn btn-danger" type="button" class="btn btn-primary btn-lg">
+                <!-- <a class="btn btn-danger" type="button" class="btn btn-primary btn-lg" ng-click="deselectWord(word.word)">
                   <span class="glyphicon glyphicon-remove"></span>
-                </a>
+                </a> -->
               </p>
             </li>
           </div>
