@@ -7,10 +7,10 @@
     <div class="jumbotron-fluid" ng-controller="ProjectsCtrl">
       <h1>New Project</h1>
       <hr>
-        <p>Save project as: {{listName}}</p>
+        <p>Save project as: {{displayText}}</p>
         <p>
-            Name: <input type="text" name="listName" id="list-name" ng-model="listName"></input> 
-            <a type="button" class="btn btn-primary" ng-click="saveList(listName)">Save</a> 
+            Name: <input type="text" name="listName" id="list-name" ng-model="displayText"></input> 
+            <a type="button" class="btn btn-primary" ng-click="saveList(displayText)">Save</a> 
         </p>
     </div>
 
@@ -31,9 +31,9 @@
 
     <div id="selected-words" class="row">
       <div class="col-xs-12">
-        <h3>Selected Words: {{listName}}</h3>
-        <ul class="selected-words-list list-inline">
-          <li>{{selectedWord}}</li>
+        <h3>Selected Words: {{displayText}}</h3>
+        <ul class="selected-words-list list-inline" ng-model="selectedWords">
+          <li>{{selectedWords.selectedWord}}</li>
         </ul>
       </div>
     </div>
@@ -50,12 +50,14 @@
         <ul class="result-word list-inline" ng-repeat="word in suggestedWords">
           <!-- word.word used to define search results array named "word" & object named "word" -->
           <div class="col-xs-6 col-md-4">
-            <li class="bg-primary lead text-center">
+            <li class="bg-primary lead text-center" type="text" name="selectedWord">
               <p>{{word.word}}</p>
               <p>
-                <a class="btn btn-success" type="button" class="btn btn-primary btn-lg">
-                  <span class="glyphicon glyphicon-ok"></span>
+                <!-- add ng-click="selectWord()" -->
+                <a class="btn btn-success" type="button" class="btn btn-primary btn-lg" ng-click="selectWord(word.word)">
+                  <span class="glyphicon glyphicon-ok"></span> 
                 </a>
+                <!-- add ng-hide -->
                 <a class="btn btn-danger" type="button" class="btn btn-primary btn-lg">
                   <span class="glyphicon glyphicon-remove"></span>
                 </a>
