@@ -29,11 +29,11 @@
     </div>
 
 
-    <div id="selected-words" class="row">
+    <div id="selected-words" class="row" ng-controller="ProjectsCtrl">
       <div class="col-xs-12">
-        <h3>Selected Words: {{displayText}}</h3>
+        <h3>Selected Words:</h3>
         <ul class="selected-words-list list-inline" ng-model="selectedWords">
-          <li>{{selectedWords.selectedWord}}</li>
+          <li ng-repeat="item in selectedWords">{{selectedWords}}</li>
         </ul>
       </div>
     </div>
