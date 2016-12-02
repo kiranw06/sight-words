@@ -21,8 +21,7 @@ angular.module('sightWordsApp')
     $scope.displayText = "";
     // object that stores an array of words selected by user
     $scope.selectedWords = [];
-    // displays selected words to user
-    $scope.selectedWord = $scope.savedLists.listData;
+    
 
     
 
@@ -67,14 +66,22 @@ angular.module('sightWordsApp')
     
     // Select/Deselect words
     $scope.selectWord = function(word){
-    	$scope.selectedWords.push(word);
+    	if ($scope.selectedWords.indexOf(word) < 0){
+        $scope.selectedWords.push(word);
+      }
+      else {
+        console.log("word already saved");
+      }
+      
     };
 
     $scope.deselectWord = function(word){
       // finds clicked word
-      $scope.word = word;
+      
+      console.log(word);
       // finds position of word in array
-      $scope.wordIndex = $scope.selectedWords.indexOf($scope.word);
+      var wordIndex = $scope.selectedWords.indexOf(word);
+      console.log(wordIndex);
 
       $scope.selectedWords.splice($scope.wordIndex, 1);
     };
