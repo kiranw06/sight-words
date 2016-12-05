@@ -56,7 +56,7 @@ angular
         controller: 'NewlistCtrl',
         controllerAs: 'newlist'
       })
-      .when('/print', {
+      .when('/print/:slug', {
         templateUrl: 'views/print.html',
         controller: 'PrintCtrl',
         controllerAs: 'print'

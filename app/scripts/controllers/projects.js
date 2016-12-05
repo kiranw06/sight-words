@@ -7,8 +7,11 @@
  * # ProjectsCtrl
  * Controller of the sightWordsApp
  */
+
 angular.module('sightWordsApp')
-  .controller('ProjectsCtrl', function(){ 
-      
+  .controller('ProjectsCtrl', function($scope, $localStorage){ 
+
+    $scope.storage = $localStorage;
+
 });
 

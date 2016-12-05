@@ -1,11 +1,12 @@
 <div class="container" ng-model="PrintCtrl">
+<div ng-if="storage.savedLists">
 
 
 <!-- Invisible in Print Mode -->
 	<div class="row bg-info">
 		<div class="col-xs-12">
 			<h1>Preview</h1>
-			{{listName}}
+			{{slug}}
 			<hr>
 			<p class="lead">
     			Looking Good? 
@@ -42,15 +43,15 @@
 		<div class="row">
 
 			<div class="col-xs-12 text-center">
-				<h1>List Name {{listName}}</h1>
+				<h1>{{slug}}</h1>
 				<p class="text-muted">
 					<b>Made with Sight Words</b><br>
 					kiranw.com/sight-words
 				</p>
 				<hr>
-				<ul class="printable-card-list list-inline">
+				<ul class="printable-card-list list-inline" ng-repeat="value in savedLists">
 					<div class="col-xs-6 printable-card bg-primary">
-						<li><h1>{{selectedWord}}</h1></li>
+						<li><h1>{{listName.slug.word.word}}</h1></li>
 					</div>
 				</ul>
 			</div>
@@ -60,6 +61,9 @@
 
 
 	</div>
+	
+</div>
+
 
 
 </div>

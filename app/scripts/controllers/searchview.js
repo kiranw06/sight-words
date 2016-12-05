@@ -9,10 +9,10 @@
  */
 angular.module('sightWordsApp')
   .controller('SearchviewCtrl', function ($scope, search, $localStorage) {
- 	 $scope.refreshsearch = function(term){
-    	$scope.suggestedWords = search.query({
-    		s: term 
-    	});
+   $scope.refreshsearch = function(term){
+      $scope.suggestedWords = search.query({
+        s: term 
+      });
     };
 
 
@@ -27,12 +27,12 @@ angular.module('sightWordsApp')
 
     // Check if saved lists exists
     if ($scope.savedLists) {
-    	console.log('loaded saved word lists');
+      console.log('loaded saved word lists');
     }
     else {
-    	$localStorage.savedLists = {};
-    	$scope.savedLists = $localStorage.savedLists;
-    	console.log('initalized saved word lists');
+      $localStorage.savedLists = {};
+      $scope.savedLists = $localStorage.savedLists;
+      console.log('initalized saved word lists');
     }
 
 
@@ -50,23 +50,23 @@ angular.module('sightWordsApp')
     //Stores List Data
     $scope.saveList = function(text){
        
-    	var slug = slugify(text);
+      var slug = slugify(text);
 
-       	var listData = {
-       	    'name': text,
+        var listData = {
+            'name': text,
             'slug': slug,
-       	    // words type stored in an array
-       	    'words': $scope.selectedWords 
-       	};
+            // words type stored in an array
+            'words': $scope.selectedWords 
+        };
 
-       // Add data to local storage	
+       // Add data to local storage 
        $localStorage.savedLists[slug] = listData;     
     };
 
     
     // Select/Deselect words
     $scope.selectWord = function(word){
-    	if ($scope.selectedWords.indexOf(word) < 0){
+      if ($scope.selectedWords.indexOf(word) < 0){
         $scope.selectedWords.push(word);
       }
       else {

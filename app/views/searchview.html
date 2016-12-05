@@ -4,14 +4,38 @@
   <div id="listData">
 
     
-    <div class="jumbotron-fluid" ng-controller="ProjectsCtrl">
-      <h1>New Project</h1>
-      <hr>
-        <p>Save project as: {{displayText}}</p>
+    <div class="row project-controlls">
+      <div class="col-xs-12">
+        <h1><small class="text-muted">New Project:</small> {{displayText}}</h1>
+        <hr>
+      </div>
+      <div class="col-sm-6">
         <p>
             Name: <input type="text" name="listName" id="list-name" ng-model="displayText"></input> 
-            <a type="button" class="btn btn-primary" ng-click="saveList(displayText)">Save</a> 
+            <button type="button" class="btn btn-primary" ng-click="saveList(displayText)">Save</button>
         </p>
+      </div>
+      <div class="col-sm-6">
+        <a href="#/print" type="button" class="btn btn-primary">Preview</a>
+        <a href="#/projects" type="button" class="btn btn-primary">View Project</a>
+      </div>
+    </div>
+    <hr>
+
+     <div id="selected-words" class="row">
+      <div class="col-xs-12">
+        <h2>Selected Words</h2>
+        <ul class="selected-words-list list-inline">
+          <li ng-repeat="word in selectedWords">
+            <p>{{word}}</p>
+            <p>
+              <buttton class="btn btn-danger" type="button" class="btn btn-primary" ng-click="deselectWord(word)">
+                    <span class="glyphicon glyphicon-remove"></span>
+              </buttton>
+            </p>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="row jumbotron">
@@ -28,31 +52,12 @@
       </div>
     </div>
 
-
-    <div id="selected-words" class="row" ng-controller="ProjectsCtrl">
-      <div class="col-xs-12">
-        <h3>Selected Words:</h3>
-        <ul class="selected-words-list list-inline">
-          <li ng-repeat="word in selectedWords">
-            <p>{{word}}</p>
-            <p>
-              <a class="btn btn-danger" type="button" class="btn btn-primary btn-lg" ng-click="deselectWord(word)">
-                    <span class="glyphicon glyphicon-remove"></span>
-              </a>
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-
   </div> 
    
 
 
     <div class="row results">
       <div class="col-xs-12">
-        <h2>Suggestions for: {{searchTerm}}</h2>
         
         <ul class="result-word list-inline" ng-repeat="word in suggestedWords">
           <!-- word.word used to define search results array named "word" & object named "word" -->
@@ -76,9 +81,5 @@
 
       </div>
     </div>
-    
-    {{suggestedWords|json}}
-
   </div>
 </div>
-

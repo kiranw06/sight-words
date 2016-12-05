@@ -3,29 +3,49 @@
     <h1>My Projects</h1>
     <hr>
 
-    <div class="col-xs-12 col-sm-6 col-md-4 panel panel-primary">
-      <h2 class="text-center">New Project</h2>
-      <p>
-        <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/newlist">
-          <span class="glyphicon glyphicon-plus"></span>
-        </a>
-      </p>
-    </div>
+    <div ng-if="storage.savedLists">
 
-    <div class="col-xs-12 col-sm-6 col-md-4 panel panel-info">
-      <h2 class="text-center">List Name: {{listName}}</h2>
-      <p>
-        <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/print">
-          Preview
-        </a>
-        <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/print">
-          <span class="glyphicon glyphicon-print"></span>
-        </a>
-        <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg">
-          <span class="glyphicon glyphicon-download-alt"></span>
-        </a>
-      </p>
+      <ul class="saved-projects-list">
+        <li>
+          <div class="col-xs-12 col-sm-6 col-md-4 panel panel-primary">
+            <h2 class="text-center">New Project</h2>
+            <p>
+              <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/searchview">
+                <span class="glyphicon glyphicon-plus"></span>
+              </a>
+            </p>
+          </div>
+        </li>
+        <li ng-repeat="name in storage.savedLists">
+          <div class="col-xs-12 col-sm-6 col-md-4 panel panel-info">
+            <h2 class="text-center">{{name.name}}</h2>
+            <p>
+              <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/print/{{name.slug}}">
+                Preview
+              </a>
+              <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/print/{{name.slug}}">
+                <span class="glyphicon glyphicon-print"></span>
+              </a>
+              <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg">
+                <span class="glyphicon glyphicon-download-alt"></span>
+              </a>
+            </p>
+          </div>
+        </li>
+      </ul>
+
     </div>
 
   </div>
 </div>
+
+
+
+  
+
+ <!--  <ul class="saved-cities-list">
+    <li ng-repeat="city in storage.savedCities">
+      <a ng-href="/#/current/{{city.id}}" class="btn btn-lg btn-primary">{{city.name}}</a>
+    </li>
+  </ul>
+</div> -->
