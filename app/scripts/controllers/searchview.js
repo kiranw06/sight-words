@@ -18,7 +18,7 @@ angular.module('sightWordsApp')
 // Visibility
     $scope.isHidden = true;
         
-    $scope.showHide = function() {
+    $scope.showHide = function () {
         //If DIV is hidden it will be visible and vice versa.
         $scope.isHidden = $scope.isHidden ? false : true;
         $scope.isVisible = $scope.isVisible ? true : false;
@@ -34,19 +34,27 @@ angular.module('sightWordsApp')
 
     // Check if saveLists exists, add savedLists if not
 
-    function debugLocalStorage() {
-      if ($scope.savedLists) {
-        console.log('loaded saved word lists');
-      }
-      else {
-        $localStorage.savedLists = {};
-        $scope.savedLists = $localStorage.savedLists;
-        console.log('initalized saved word lists');
-      }
-    };
+    if ($scope.savedLists) {
+      console.log('loaded saved word lists');
+    }
+    else {
+      $localStorage.savedLists = {};
+      $scope.savedLists = $localStorage.savedLists;
+      console.log('initalized saved word lists');
+    }
 
-    return debugLocalStorage;
+    // function debugLocalStorage() {
+    //   if ($scope.savedLists) {
+    //     console.log('loaded saved word lists');
+    //   }
+    //   else {
+    //     $localStorage.savedLists = {};
+    //     $scope.savedLists = $localStorage.savedLists;
+    //     console.log('initalized saved word lists');
+    //   }
+    // };
 
+    // return debugLocalStorage;
 
 
     // Makes slug for list name type
