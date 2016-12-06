@@ -6,7 +6,7 @@
 	<div class="row bg-info">
 		<div class="col-xs-12">
 			<h1>Preview</h1>
-			{{slug}}
+			{{currentList.name}}
 			<hr>
 			<p class="lead">
     			Looking Good? 
@@ -43,15 +43,15 @@
 		<div class="row">
 
 			<div class="col-xs-12 text-center">
-				<h1>{{slug}}</h1>
+				<h1>{{currentList.name}}</h1>
 				<p class="text-muted">
 					<b>Made with Sight Words</b><br>
 					kiranw.com/sight-words
 				</p>
 				<hr>
-				<ul class="printable-card-list list-inline" ng-repeat="value in savedLists">
+				<ul class="printable-card-list list-inline" ng-repeat="word in currentWords">
 					<div class="col-xs-6 printable-card bg-primary">
-						<li><h1>{{listName.slug.word.word}}</h1></li>
+						<li><h1>{{word}}</h1></li>
 					</div>
 				</ul>
 			</div>

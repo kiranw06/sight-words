@@ -26,20 +26,10 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
       .when('/projects', {
         templateUrl: 'views/projects.html',
         controller: 'ProjectsCtrl',
         controllerAs: 'projects'
-      })
-      .when('/starter', {
-        templateUrl: 'views/starter.html',
-        controller: 'StarterCtrl',
-        controllerAs: 'starter'
       })
       .when('/login', {
         templateUrl: 'views/login.html',

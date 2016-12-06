@@ -15,6 +15,15 @@ angular.module('sightWordsApp')
       });
     };
 
+// Visibility
+    $scope.isHidden = true;
+        
+    $scope.showHide = function() {
+        //If DIV is hidden it will be visible and vice versa.
+        $scope.isHidden = $scope.isHidden ? false : true;
+        $scope.isVisible = $scope.isVisible ? true : false;
+    };
+
 
 //Define Global Variables
     $scope.savedLists = $localStorage.savedLists;
@@ -23,17 +32,21 @@ angular.module('sightWordsApp')
     $scope.selectedWords = [];
     
 
-    
+    // Check if saveLists exists, add savedLists if not
 
-    // Check if saved lists exists
-    if ($scope.savedLists) {
-      console.log('loaded saved word lists');
-    }
-    else {
-      $localStorage.savedLists = {};
-      $scope.savedLists = $localStorage.savedLists;
-      console.log('initalized saved word lists');
-    }
+    function debugLocalStorage() {
+      if ($scope.savedLists) {
+        console.log('loaded saved word lists');
+      }
+      else {
+        $localStorage.savedLists = {};
+        $scope.savedLists = $localStorage.savedLists;
+        console.log('initalized saved word lists');
+      }
+    };
+
+    return debugLocalStorage;
+
 
 
     // Makes slug for list name type
@@ -59,8 +72,18 @@ angular.module('sightWordsApp')
             'words': $scope.selectedWords 
         };
 
-       // Add data to local storage 
-       $localStorage.savedLists[slug] = listData;     
+      // Add data to local storage 
+        if ($scope.savedLists) {
+          console.log('list data saved');
+        }
+        else {
+          $localStorage.savedLists = {};
+          $scope.savedLists = $localStorage.savedLists;
+          console.log('savedLists added to localStorage, list data saved.');
+        }
+        // Saves list Data
+        $scope.savedLists[slug] = listData;
+    
     };
 
     
@@ -82,8 +105,9 @@ angular.module('sightWordsApp')
       // finds position of word in array
       var wordIndex = $scope.selectedWords.indexOf(word);
       console.log(wordIndex);
+      $scope.selectedWords.splice(wordIndex, 1);
 
-      $scope.selectedWords.splice($scope.wordIndex, 1);
     };
+
 
 });
