@@ -22,9 +22,7 @@ angular.module('sightWordsApp')
    	console.log($scope.savedLists);
    	$scope.currentList = $scope.savedLists[$scope.slug];
    	console.log($scope.currentList);
-
-//	Adds $scope to words in currentList 
-
+	//	Adds $scope to words in currentList 
 	$scope.currentWords = $scope.currentList.words;
 
 

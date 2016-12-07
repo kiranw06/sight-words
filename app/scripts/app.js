@@ -51,6 +51,11 @@ angular
         controller: 'PrintCtrl',
         controllerAs: 'print'
       })
+      .when('/current-list/:slug', {
+        templateUrl: 'views/current-list.html',
+        controller: 'CurrentListCtrl',
+        controllerAs: 'currentList'
+      })
       .otherwise({
         redirectTo: '/'
       });

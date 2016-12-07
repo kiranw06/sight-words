@@ -9,6 +9,8 @@
  */
 angular.module('sightWordsApp')
   .controller('SearchviewCtrl', function ($scope, search, $localStorage) {
+
+//API Search Query
    $scope.refreshsearch = function(term){
       $scope.suggestedWords = search.query({
         s: term 

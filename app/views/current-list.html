@@ -1,4 +1,4 @@
-<div ng-app="sight-words" ng-controller="SearchviewCtrl" class="container">
+<div ng-app="sight-words" ng-controller="CurrentListCtrl" class="container">
   <div ng-init="s=''">
     
   <div id="listData">
@@ -6,17 +6,16 @@
     
     <div class="row project-controlls">
       <div class="col-xs-12">
-        <h1><small class="text-muted">New Project: </small>{{displayText}}</h1>
+        <h1><small class="text-muted">Edit Project: </small><span type="text" name="listName" id="list-name" ng-model="displayText">{{currentList.name}}</span></h1>
         <hr>
       </div>
       <div class="col-sm-6">
         <p>
-            Name: <input type="text" name="listName" id="list-name" ng-model="displayText"></input> 
-            <button type="button" class="btn btn-primary" ng-click="saveList(displayText)">Save</button>
+          <button type="button" class="btn btn-primary" ng-click="saveList()">Save</button>
         </p>
       </div>
       <div class="col-sm-6">
-        <a ng-href="#/print/{{name.slug}}" type="button" class="btn btn-primary">Preview</a>
+        <a ng-href="#/print/{{slug}}" type="button" class="btn btn-primary">Preview</a>
         <a ng-href="#/projects" type="button" class="btn btn-primary">View Project</a>
       </div>
     </div>
