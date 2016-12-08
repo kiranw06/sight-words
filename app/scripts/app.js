@@ -16,6 +16,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
+    'ngPrint',
     'ngStorage',
     'ngTouch'
   ])

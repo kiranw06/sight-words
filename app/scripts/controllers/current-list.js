@@ -37,7 +37,7 @@ angular.module('sightWordsApp')
   		$scope.selectedWords = $scope.currentList.words;
 
   	//	Saves list with the same name
-  		$scope.displayText = $scope.currentList.name;
+  		// $scope.displayText = $scope.currentList.name;
 
 
   	// Check if saveLists exists, add savedLists if 
