@@ -24,18 +24,19 @@
      <div id="selected-words" class="row">
       <div class="col-xs-12">
         <h2>Selected Words</h2>
+
         <ul class="selected-words-list list-inline">
           <li ng-repeat="word in selectedWords">
             <div class="panel panel-default">
-              <div class="panel-body">
-                <buttton class="btn btn-sm btn-danger pull-right" type="button" ng-click="deselectWord(word)">
+              <div class="panel-body text-center">
+                <p class="lead">{{word}} </p>
+                <buttton class="btn btn-danger" type="button" ng-click="deselectWord(word)">
                       <span class="glyphicon glyphicon-remove"></span>
                 </buttton>
-                <span class="lead">{{word}} </span>
               </div>
-            </div>
           </li>
         </ul>
+
       </div>
     </div>
 
@@ -63,18 +64,20 @@
         <ul class="result-word list-inline" ng-repeat="word in suggestedWords">
           <!-- word.word used to define search results array named "word" & object named "word" -->
           <div class="col-xs-6 col-md-4">
-            <li class="bg-primary lead text-center" type="text" name="selectedWord">
-              <p>{{word.word}}</p>
-              <p>
-                <!-- add ng-click="selectWord()" -->
-                <a class="btn btn-success" type="button" class="btn btn-primary btn-lg" ng-click="selectWord(word.word)">
-                  <span class="glyphicon glyphicon-ok"></span> 
-                </a>
-                <!-- add ng-hide -->
-                <!-- <a class="btn btn-danger" type="button" class="btn btn-primary btn-lg" ng-click="deselectWord(word.word)">
-                  <span class="glyphicon glyphicon-remove"></span>
-                </a> -->
-              </p>
+            <li type="text" name="selectedWord">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                    <!-- add ng-click="selectWord()" -->
+                    <a class="btn btn-success pull-right" ng-click="selectWord(word.word)">
+                      <span class="glyphicon glyphicon-ok"></span> 
+                    </a>
+                    <!-- add ng-hide -->
+                    <!-- <a class="btn btn-danger" type="button" class="btn btn-primary btn-lg" ng-click="deselectWord(word.word)">
+                      <span class="glyphicon glyphicon-remove"></span>
+                    </a> -->
+                  <p class="lead text-center" >{{word.word}}</p>
+                </div>
+              </div>
             </li>
           </div>
         

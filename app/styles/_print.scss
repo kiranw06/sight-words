@@ -1,29 +1,6 @@
-/* From the ngPrint module bowercomponents/ngPrint/ngPrint.css */
-
-@media screen {
-    #printSection {
-        display: none;
-    }
-}
-
-@media print {
-    body * {
-        display:none;
-    }
-
-    #printSection, #printSection * {
-        display: inline;
-    }
-
-    #printSection {
-        position:absolute;
-        left:0;
-        top:0;
-    }
-}
 
 @page {
-  size: A4;
+  size: A4 landscape;
 }
 
 div.printable {
@@ -43,6 +20,8 @@ div.printable-card {
       border-radius: 30px;
       border-style: dashed;
       border-width: thick;
+
+      page-break-before: always;
 }
 
 div.printable-card li h1 {
