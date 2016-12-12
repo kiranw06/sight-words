@@ -32,11 +32,11 @@ angular
         controller: 'ProjectsCtrl',
         controllerAs: 'projects'
       })
-      // .when('/login', {
-      //   templateUrl: 'views/login.html',
-      //   controller: 'LoginCtrl',
-      //   controllerAs: 'login'
-      // })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
       .when('/searchview', {
         templateUrl: 'views/searchview.html',
         controller: 'SearchviewCtrl',
