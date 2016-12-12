@@ -4,35 +4,55 @@
     <hr>
 
     <div ng-if="storage.savedLists">
+        <ul class="new-projects-list list-unstyled">
+          
+          <li>
+            <div class="col-xs-12 col-sm-5 panel panel-success">
+              <div class="panel-heading">
+                <h2 class="text-center">New Project</h2>
+              </div>
+              <div class="panel-body">
+              <p>
+                <a class="btn btn-md btn-success center-block" type="button" class="btn btn-primary btn-md" ng-href="#/searchview">
+                  <span class="glyphicon glyphicon-plus"></span>
+                </a>
+              </p>
+              </div>
+            </div>
+          </li>
+        
+        </ul>
 
-      <ul class="saved-projects-list">
-        <li>
-          <div class="col-xs-12 col-sm-6 col-md-4 panel panel-primary">
-            <h2 class="text-center">New Project</h2>
-            <p>
-              <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/searchview">
-                <span class="glyphicon glyphicon-plus"></span>
-              </a>
-            </p>
-          </div>
-        </li>
-        <li ng-repeat="name in storage.savedLists">
-          <div class="col-xs-12 col-sm-6 col-md-4 panel panel-info">
-            <h2 class="text-center">{{name.name}}</h2>
-            <p>
-              <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/print/{{name.slug}}">
-                Preview
-              </a>
-              <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/print/{{name.slug}}">
-                <span class="glyphicon glyphicon-print"></span>
-              </a>
-              <a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg" ng-href="#/current-list/{{name.slug}}">
-                <span class="glyphicon glyphicon-pencil"></span>
-              </a>
-            </p>
-          </div>
-        </li>
-      </ul>
+
+        <ul class="saved-projects-list list-unstyled">
+          <li ng-repeat="name in storage.savedLists">
+            <div class="col-xs-12 col-sm-5 panel panel-primary">
+
+              <div class="panel-heading">
+                <h2 class="text-center">{{name.name}}</h2>
+              </div>
+
+              <div class="panel-body">
+                <p>
+                  <div class="pull-left">
+                    <a type="button" class="btn btn-primary btn-md" ng-href="#/print/{{name.slug}}">
+                    Preview
+                  </a>
+                  </div>
+                  <div class="btn-group pull-right">
+                    <a type="button" class="btn btn-success btn-md" ng-href="#/print/{{name.slug}}">
+                      <span class="glyphicon glyphicon-print"></span>
+                    </a>
+                    <a type="button" class="btn btn-warning btn-md" ng-href="#/current-list/{{name.slug}}">
+                      <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                  </div>
+                </p>
+              </div>   
+
+            </div>
+          </li>
+        </ul>
 
     </div>
 

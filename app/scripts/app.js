@@ -32,20 +32,15 @@ angular
         controller: 'ProjectsCtrl',
         controllerAs: 'projects'
       })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'login'
-      })
+      // .when('/login', {
+      //   templateUrl: 'views/login.html',
+      //   controller: 'LoginCtrl',
+      //   controllerAs: 'login'
+      // })
       .when('/searchview', {
         templateUrl: 'views/searchview.html',
         controller: 'SearchviewCtrl',
         controllerAs: 'searchview'
-      })
-      .when('/newlist', {
-        templateUrl: 'views/newlist.html',
-        controller: 'NewlistCtrl',
-        controllerAs: 'newlist'
       })
       .when('/print/:slug', {
         templateUrl: 'views/print.html',

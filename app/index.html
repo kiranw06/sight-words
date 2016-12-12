@@ -12,6 +12,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" media="print" href="bower_components/ngPrint/ngPrint.css" >
     <!-- endbuild -->
   </head>
   <body ng-app="sightWordsApp">
@@ -42,10 +43,10 @@
               <li><a ng-href="#/searchview">New Project</a></li>
               <li><a ng-href="#/projects">My Projects</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+           <!--  <ul class="nav navbar-nav navbar-right">
               <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
               <li><a ng-href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul
+            </ul> -->
           </div>
         </div>
       </div>
@@ -86,6 +87,7 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/ngPrint/ngPrint.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

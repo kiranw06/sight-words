@@ -1,44 +1,59 @@
-<div class="container" ng-model="PrintCtrl">
+<div ng-model="PrintCtrl">
 <div ng-if="storage.savedLists">
 
 
 <!-- Invisible in Print Mode -->
-	<div class="row bg-info">
+<div class="container">
+
+
+	<div class="row">
 		<div class="col-xs-12">
-			<h1>Preview</h1>
-			{{currentList.name}}
-			<hr>
-			<p class="lead">
-    			Looking Good? 
-    		</p>
+			<div class="panel panel-default text-center">
+
+		      <div class="panel-heading">
+		      	<h1><small class="text-muted">Preview Project:</small> {{currentList.name}}</h1>
+		      </div>
+
+		      <div class="panel-body">
+				<p class="lead">
+		    		Looking Good? 
+		    	</p>
+		    	<div class="col-xs-12 col-sm-6 bg-warning">
+		    		<h2>Meh...</h2>
+		    		<p>Go back and edit.</p>
+		    		<p>
+		    			<a class="btn btn-lg btn-warning" type="button" class="btn btn-primary btn-lg pull-right" ng-href="#/current-list/{{slug}}">
+		    	   		  <span class="glyphicon glyphicon-pencil"></span>
+		    	   		</a>
+		    		</p>
+		    	</div>
+		    	<div class="col-xs-12 col-sm-6 bg-success">
+		    		<h2>Yep!</h2>
+		    		<p>Happy Quizzing</p>
+		    		<p>
+		    			<button class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg pull-right"ng-print print-element-id="printThisElement">
+		    	   		  <span class="glyphicon glyphicon-print"></span>
+		    	   		</button>
+		    	   		<!-- TODO download btn
+		    	   		<a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg pull-right">
+		    	   		  <span class="glyphicon glyphicon-download-alt"></span>
+		    	   		</a> -->
+		    		</p>
+		    	</div>
+		      </div>
+
+		    </div>
 		</div>
-    	<div class="col-xs-12 col-sm-5 bg-warning">
-    		<h2>Meh...</h2>
-    		<p>Go back and edit.</p>
-    		<p>
-    			<a class="btn btn-lg btn-warning" type="button" class="btn btn-primary btn-lg pull-right" ng-href="#/current-list/{{slug}}">
-        		  <span class="glyphicon glyphicon-pencil"></span>
-        		</a>
-    		</p>
-    	</div>
-    	<div class="col-xs-12 col-sm-7 bg-success">
-    		<h2>Yep!</h2>
-    		<p>Happy Quizzing</p>
-    		<p>
-    			<button class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg pull-right" ng-print print-element-id="printThisElement"><i class="fa fa-print"></i>
-        		  <span class="glyphicon glyphicon-print"></span>
-        		</button>
-        		<a class="btn btn-lg btn-success" type="button" class="btn btn-primary btn-lg pull-right">
-        		  <span class="glyphicon glyphicon-download-alt"></span>
-        		</a>
-    		</p>
-    	</div>
 	</div>
+
+
+</div>
+	
 
 <!-- Previewed Printable -->
 	<div class="container">
 		
-		<div class="row">
+		<div class="row printable">
 			<div class="col-xs-12 text-center">
 				<h1>{{currentList.name}}</h1>
 				<p class="text-muted">
@@ -46,36 +61,45 @@
 					kiranw.com/sight-words
 				</p>
 				<hr>
+
 				<ul class="printable-card-list list-inline" ng-repeat="word in currentWords">
-					<div class="col-xs-6 printable-card bg-primary">
-						<li><h1>{{word}}</h1></li>
+					<div class="panel panel-default printable-card">
+					  <div class="panel-body">
+					    <li><h1>{{word}}</h1></li>
+					  </div>
 					</div>
 				</ul>
+
 			</div>
 		</div>
 		
 	</div>
 
 
+
 <!-- Repeat Elements for Printing -->
-	<div id="printSection" class="container">
-		
-		<div id="printThisElement" class="row">
-			<div class="col-xs-12 text-center">
-				<h1>{{currentList.name}}</h1><br>
-				<p class="text-muted">
-					<b>Made with Sight Words</b><br>
-					kiranw.com/sight-words
-				</p><br>
-				<hr>
-				<ul class="printable-card-list list-inline" ng-repeat="word in currentWords">
-					<div class="col-xs-6 printable-card bg-primary">
-						<li><h1>{{word}}</h1></li>
-					</div>
-				</ul>
-			</div>
+	<div id="printSection">
+		<div class="container">
+
+			<div id="printThisElement" class="row printable">
+				<div class="col-xs-12 text-center">
+					<h1>{{currentList.name}}</h1><br>
+					<p class="text-muted">
+						<b>Made with Sight Words</b><br>
+						kiranw.com/sight-words
+					</p><br>
+					<hr>
+					<ul class="printable-card-list list-inline" ng-repeat="word in currentWords">
+						<div class="col-xs-6 panel-default printable-card">
+							<p>
+								<li><h1>{{word}}</h1></li>
+							</p>
+						</div>
+					</ul>
+				</div>
+			</div>	
+
 		</div>
-		
 	</div>
 	
 

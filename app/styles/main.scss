@@ -1,10 +1,93 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
-@import "print";
+// Override Bootstrap variables
+@import "variables";
+
+@import "theme";
+/*@import "print";*/
+/*@import "author-styles";*/
 
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+
+
+
+
+/*////Author Styles////*/
+
+/* Search Page */
+
+.btn-danger {
+  margin: .5%;
+  font-size: .75rem;
+}
+
+/* Projects Page */
+.new-projects-list, .saved-projects-list {
+
+  .col-xs-12 {
+    padding: 0;
+  }
+
+  .panel {
+    margin: 3%;
+  }
+
+  .panel-body {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+      margin-right: 5%;
+
+    a.center-block {
+        margin-left: 40%;
+        margin-right: 40%;
+    }
+  }
+
+  h2 {
+      font-size: 3rem;
+  }
+  
+}
+
+
+/* Print Styles */
+
+
+@page {
+  size: A4;
+}
+
+div.printable {
+    width: 100%;
+    height: 100%;
+
+    .printable-card {
+      /* text-format */
+      h1 {
+        font-size: 8rem;
+        margin-top: 16%;
+        margin-bottom: 20%;
+      }
+      background-color: #ffe8a5;        
+      /*size*/   
+      width: 5in;
+      height: 3in;
+      /* border */
+      border-color: #333333;
+      border-radius: 30px;
+      border-style: dashed;
+      border-width: thick;
+    }
+}
+
+
+
+
+
+/*////Theme Styles////*/
 
 .browsehappy {
   margin: 0.2em 0;

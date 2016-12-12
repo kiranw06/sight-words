@@ -15,7 +15,7 @@
         </p>
       </div>
       <div class="col-sm-6">
-        <a ng-href="#/print/{{slug}}" type="button" class="btn btn-primary">Preview</a>
+        <!-- TODO <a ng-href="#/print/{{slug}}" type="button" class="btn btn-primary">Preview</a> -->
         <a ng-href="#/projects" type="button" class="btn btn-primary">View Project</a>
       </div>
     </div>
@@ -26,12 +26,14 @@
         <h2>Selected Words</h2>
         <ul class="selected-words-list list-inline">
           <li ng-repeat="word in selectedWords">
-            <p>{{word}}</p>
-            <p>
-              <buttton class="btn btn-danger" type="button" class="btn btn-primary" ng-click="deselectWord(word)">
-                    <span class="glyphicon glyphicon-remove"></span>
-              </buttton>
-            </p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <buttton class="btn btn-sm btn-danger pull-right" type="button" ng-click="deselectWord(word)">
+                      <span class="glyphicon glyphicon-remove"></span>
+                </buttton>
+                <span class="lead">{{word}} </span>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
