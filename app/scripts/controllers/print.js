@@ -39,10 +39,10 @@ angular.module('sightWordsApp')
    	}
 
       $scope.printDiv = function() {
-        var printContents = document.getElementById('printable').innerHTML;
+        var printContents = document.getElementById("printable").innerHTML;
         var popupWin = window.open('Print Me', '_blank');
         popupWin.document.open();
-        popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="styles/main.css"></head><body onload="window.print()">' + printContents + '</body></html>');
+        popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="../styles/main.css"></head><body onload="window.print()">' + printContents + '</body></html>');
         popupWin.document.close();
       }; 
 
